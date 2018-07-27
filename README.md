@@ -1,5 +1,6 @@
 # JAVA-Train
 All java implementation for DS(data structure) &amp; AD(advanced programming)
+
 ##########################     1. TestResult    #################################################################
 static void process(String answer,String data)
 رشته answer یک رشته به طول n بوده که n برابر با تعداد سوالات امتحان تستی می باشد، و از کاراکتر های {A,B,C,D} تشکیل
