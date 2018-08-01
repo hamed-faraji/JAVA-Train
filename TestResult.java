@@ -1,7 +1,40 @@
 import java.util.Scanner;
 
 public class TestResult {
-	static void process(String answer, String data) {}
+
+	private static Scanner scanner2;
+	static void process(String answer, String data) {
+		String[] parts = data.split(" ");
+
+	
+	//joda kardan asami va javabha:
+	double correct = 0;
+	double incorrect = 0;
+	double nazadeh = 0;
+	char a, b;
+	double part[] = new double[parts.length / 2];
+	
+	//moghayese javabha
+	for (int i = 1; i <= parts.length; i += 2)
+	{
+
+		for (int j = 0; j < answer.length(); j++)
+		{
+			a = parts[i].charAt(j);
+
+			b = answer.charAt(j);
+
+			if (a == b)
+				correct++;
+			else if (a == 'Z')
+				nazadeh++;
+			else
+				incorrect++;
+		}
+
+		
+		
+	}
 
 	
 	public static void main(String args[]) {/// do not edit main method, input
