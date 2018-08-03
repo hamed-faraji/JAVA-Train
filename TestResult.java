@@ -31,11 +31,23 @@ public class TestResult {
 			else
 				incorrect++;
 		}
+		//mohasebeye darsad va sakhtan array baraye darsadha:			
+		part[(i - 1) / 2] = (((correct * 3) - incorrect) / ((correct + incorrect + nazadeh) * 3)*100);
 
+	
+		correct = 0;
+		incorrect = 0;
+		nazadeh = 0;
 		
 		
 	}
-
+	
+	//rikhtan asami dar array jodagane:	
+    String[] name = new String[parts.length/2];
+	for(int i=0;i<parts.length;i+=2)
+		name [i/2] = parts[i];
+	
+	}
 	
 	public static void main(String args[]) {/// do not edit main method, input
 										/// should be entered as described
