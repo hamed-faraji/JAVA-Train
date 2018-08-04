@@ -46,6 +46,29 @@ public class TestResult {
     String[] name = new String[parts.length/2];
 	for(int i=0;i<parts.length;i+=2)
 		name [i/2] = parts[i];
+		
+		
+		int p;
+	for (p = part.length - 1; p >= 0; p--) {
+		double max = part[p];
+		for (int k = 0; k <= p; k++)
+			if (max < part[k]) {
+				max = part[k];
+				double index = part[p];
+				part[p] = part[k];
+				part[k] = index;
+				
+				String nameIndex = name[p];
+				name[p] = name[k];
+				name[k] = nameIndex;
+				
+				
+			}
+	}
+	
+	//chape khoroji:
+	for (int i = name.length - 1; i >= 0; i--)
+		System.out.printf("%s %.2f\n", name[i], part[i]);
 	
 	}
 	
