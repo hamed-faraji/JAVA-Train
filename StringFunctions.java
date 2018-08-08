@@ -13,6 +13,26 @@ public class StringFunctions {
 		// jodasazie dastoorha:
 		String[] parts = line.split("_");
 		
+		// jodasazie dastor asli va ebarate dakhelparantez:
+		for (int i = 0; i < parts.length; i++) {
+			command = parts[i];
+			String[] dastoor = command.split("[()]");
+
+			//////////////// SORT:
+			if (dastoor[0].equals("sort")) {}
+			//////////// REVERSE:
+			if (dastoor[0].equals("reverse")) {}
+			/////// TOLOWER
+			if (dastoor[0].equals("tolower")) {}
+			/////////// TOUPPER:
+			if (dastoor[0].equals("toupper")) {}
+			//////// CHANGECASE:
+			if (dastoor[0].equals("changecase")) {}
+			/////////// REPLACE:
+			if (dastoor[0].equals("replace")) {}
+			/////////// CONCAT:
+			if (dastoor[0].equals("concat")) {}
+		
 		
 		
 		
