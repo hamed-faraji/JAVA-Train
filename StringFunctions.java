@@ -92,6 +92,13 @@ public class StringFunctions {
 					System.out.println();
 
 				}
+				// ghesmate marboot be yek khoroji:
+				else {
+					int a = array1.length;
+					for (int j1 = a - 1; j1 >= 0; j1--)
+						System.out.print(array1[j1]);
+					System.out.println();
+				}
 			}
 			/////// TOLOWER
 			if (dastoor[0].equals("tolower")) {}
