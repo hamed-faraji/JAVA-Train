@@ -68,7 +68,31 @@ public class StringFunctions {
 				}
 			}
 			//////////// REVERSE:
-			if (dastoor[0].equals("reverse")) {}
+			if (dastoor[0].equals("reverse")) {String imported = dastoor[1];
+				String[] array1 = imported.split("");
+				// ghesmat marboot be 3 vorodi va reverse bakhshi az string:
+				if (imported.contains(",")) {
+					String[] array2 = imported.split(",");
+					String[] array3 = array2[0].split("");
+					String a = array2[1];
+					int start = Integer.parseInt(a);
+					String b = array2[2];
+					int end = Integer.parseInt(b);
+					// ja be ja kardane character haye bakhshe moshakhas shode
+					// az reshte morede nazar:
+					for (int j1 = start; j1 < end; j1++) {
+						temp1 = array3[end];
+						array3[end] = array3[j1];
+						array3[j1] = temp1;
+						end--;
+					}
+					// print khoroji:
+					for (int j = 0; j < array3.length; j++)
+						System.out.print(array3[j]);
+					System.out.println();
+
+				}
+			}
 			/////// TOLOWER
 			if (dastoor[0].equals("tolower")) {}
 			/////////// TOUPPER:
