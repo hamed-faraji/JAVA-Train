@@ -48,6 +48,24 @@ public class StringFunctions {
 						System.out.print(array3[j1]);
 					System.out.println();
 				}
+				// bakhshe marbot be sort yek vorodi:
+				else {
+					for (int t = 0; t < array1.length; t++) {
+						for (int k = t + 1; k < array1.length; k++) {
+							if (array1[k].compareTo(array1[t]) < 0) {
+								String temp = array1[t];
+								array1[t] = array1[k];
+								array1[k] = temp;
+
+							}
+						}
+
+					}
+					for (int j1 = 0; j1 < array1.length; j1++)
+						System.out.print(array1[j1]);
+					System.out.println();
+
+				}
 			}
 			//////////// REVERSE:
 			if (dastoor[0].equals("reverse")) {}
