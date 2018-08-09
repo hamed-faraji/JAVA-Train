@@ -101,7 +101,42 @@ public class StringFunctions {
 				}
 			}
 			/////// TOLOWER
-			if (dastoor[0].equals("tolower")) {}
+			if (dastoor[0].equals("tolower")) {
+				String imported = dastoor[1];
+				String[] array1 = imported.split("");
+				// ghesmat marboot be 3 vorodi va tolower bakhshi az string:
+				if (imported.contains(",")) {
+					String[] array2 = imported.split(",");
+					String[] array3 = array2[0].split("");
+					String a = array2[1];
+					// moshakhas kardan ebteda va entehaye ghesmate morede nazar
+					// dar string:
+					int start = Integer.parseInt(a);
+					String b = array2[2];
+					int end = Integer.parseInt(b);
+					// taghire horofe bozorg be kochik dar ghesmate khas:
+					for (int j3 = 0; j3 < array3.length; j3++) {
+						if (j3 == start)
+
+						{
+							for (int j = start; j <= end; j++) {
+
+								char c = array3[j].charAt(0);
+								int c1 = (int) c;
+								int c2 = c1 + 32;
+								if (c1 < 91 && c1 > 64)
+									System.out.print(Character.toChars(c2));
+								else
+									System.out.print(array3[j]);
+
+							}
+							j3 = end + 1;
+						}
+						System.out.print(array3[j3]);
+					}
+					System.out.println();
+				} 
+			}
 			/////////// TOUPPER:
 			if (dastoor[0].equals("toupper")) {}
 			//////// CHANGECASE:
