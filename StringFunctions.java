@@ -152,7 +152,46 @@ public class StringFunctions {
 				}
 			}
 			/////////// TOUPPER:
-			if (dastoor[0].equals("toupper")) {}
+			if (dastoor[0].equals("toupper")) {
+				String imported = dastoor[1];
+				String[] array1 = imported.split("");
+				// ghesmat marboot be 3 vorodi va toupper kardan string:
+				if (imported.contains(",")) {
+					String[] array2 = imported.split(",");
+					String[] array3 = array2[0].split("");
+					String a = array2[1];
+					// moshakhas kardan ebteda va entehaye ghesmate morede
+					// nazar:
+					// dar string:
+					int start = Integer.parseInt(a);
+					String b = array2[2];
+					int end = Integer.parseInt(b);
+					// taghire horofekochak be horofe bozorg:
+					for (int j3 = 0; j3 < array3.length; j3++) {
+						if (j3 == start)
+
+						{
+							for (int j = start; j <= end; j++) {
+
+								char c = array3[j].charAt(0);
+								int c1 = (int) c;
+								int c2 = c1 - 32;
+								if (c1 > 96 && c1 < 123)
+									System.out.print(Character.toChars(c2));
+								else
+									System.out.print(array3[j]);
+
+							}
+							j3 = end + 1;
+						}
+						System.out.print(array3[j3]);
+					}
+					System.out.println();
+				} else{
+					
+					
+				}
+			}
 			//////// CHANGECASE:
 			if (dastoor[0].equals("changecase")) {}
 			/////////// REPLACE:
