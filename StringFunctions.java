@@ -189,6 +189,17 @@ public class StringFunctions {
 					System.out.println();
 				} else{
 					
+					for (int j3 = 0; j3 < array1.length; j3++) {
+						char c = array1[j3].charAt(0);
+						int c1 = (int) c;
+						int c2 = c1 - 32;
+						// print khoroji ba emale taghirate marboote
+						if (c1 < 123 && c1 > 96)
+							System.out.print(Character.toChars(c2));
+						else
+							System.out.print(array1[j3]);
+					}
+					System.out.println();
 					
 				}
 			}
