@@ -268,10 +268,28 @@ public class StringFunctions {
 					// reshte morede nazar:
 					int j2 = 0;
 					if (array4[0].equals(array3[j])) {
-						
+						for (int j1 = j; j1 < j + array4.length; j1++)
+
+						{
+							if (array4[j2].equals(array3[j1])) {
+								if (j2 != array4.length)
+									j2++;
+							} else
+								break;
+						}
+						if (j2 == array4.length) {
+							System.out.print(array2[2]);
+							j += array4.length - 1;
+						} else {
+							for (int j3 = j; j3 < j + j2; j3++)
+								System.out.print(array3[j3]);
+							j += j2 - 1;
+						}
 					}else{
-						
-					}
+						System.out.print(array3[j]);
+
+				}
+				System.out.println();
 			}
 			/////////// CONCAT:
 			if (dastoor[0].equals("concat")) {}
