@@ -257,7 +257,22 @@ public class StringFunctions {
 				}
 			}
 			/////////// REPLACE:
-			if (dastoor[0].equals("replace")) {}
+			if (dastoor[0].equals("replace")) {
+				String imported = dastoor[1];
+				// ghesmat marboot be 3 vorodi va replace kardan anha:
+				String[] array2 = imported.split(",");
+				String[] array4 = array2[1].split("");
+				String[] array3 = array2[0].split("");
+				for (int j = 0; j < array3.length; j++) {
+					// ja be ja kardane string3 ba ebarate moshabehe string2 dar
+					// reshte morede nazar:
+					int j2 = 0;
+					if (array4[0].equals(array3[j])) {
+						
+					}else{
+						
+					}
+			}
 			/////////// CONCAT:
 			if (dastoor[0].equals("concat")) {}
 		
