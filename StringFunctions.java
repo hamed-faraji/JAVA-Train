@@ -292,15 +292,15 @@ public class StringFunctions {
 				System.out.println();
 			}
 			/////////// CONCAT:
-			if (dastoor[0].equals("concat")) {}
-		
-		
-		
-		
-		
-		
-		
-		
+			if (dastoor[0].equals("concat")) {
+				
+				String[] array2 = dastoor[1].split(",");
+				// daryafte reshteha va chasbandan anha be ham
+				for (int j = 0; j < array2.length; j++) {
+					System.out.print(array2[j]);
+				}
+				System.out.println();
+			}
 		
 		
 	}
