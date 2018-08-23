@@ -29,7 +29,30 @@ public class PolynomialMultiplication {
 				term2[i] = term2[i].replace("-", "-1");
 			else if (term2[i].contains("+x"))
 				term2[i] = term2[i].replace("+", "+1");
-
+			
+				ArrayList<String> allList = new ArrayList<String>();
+		String[] allArr = new String[allList.size()];
+		for (int i = 0; i < term1.length; i++) {
+			
+			// for doing multiplication:(for terms1)
+			// ghesmate marboot be amaliate tavan:(baraye term1)
+			if (term1[i].contains("x")) {
+				if (term1[i].equals("+1x")) {
+					int a = 1;
+					
+				} else if (term1[i].equals("-1x")) {
+					
+				}
+				// ghesmate marboot be x ha:(baraye term1)
+				else {
+				
+				}
+			}
+		
+		}
+		
+		
+		
 		
 		
 		}
