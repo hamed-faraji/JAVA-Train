@@ -17,6 +17,19 @@ public class PolynomialMultiplication {
 			if (term2[0].charAt(0) == 'x')
 				term2[0] = String.join("", "+", term2[0]);
 		}
+		// if special term be -x or +x change it to -1x and +1x for next
+		// processes:
+		for (int i = 0; i < term1.length; i++)
+			if (term1[i].contains("-x"))
+				term1[i] = term1[i].replace("-", "-1");
+			else if (term1[i].contains("+x"))
+				term1[i] = term1[i].replace("+", "+1");
+		for (int i = 0; i < term2.length; i++)
+			if (term2[i].contains("-x"))
+				term2[i] = term2[i].replace("-", "-1");
+			else if (term2[i].contains("+x"))
+				term2[i] = term2[i].replace("+", "+1");
+
 		
 		
 		}
