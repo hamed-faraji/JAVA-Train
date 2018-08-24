@@ -157,6 +157,38 @@ public class PolynomialMultiplication {
 
 					} else {
 						
+						for (int j = 0; j < term2.length; j++) {
+							// for seprate terms that contain "x":
+							if (term2[j].contains("x")) {
+								if (term2[j].equals("+1x")) {
+									int c = 1, e = a * c;
+									allList.add(e + "x" + "^" + 2);
+								} else if (term2[j].equals("-1x")) {
+									int c = -1, e = a * c;
+									allList.add(e + "x" + "^" + 2);
+
+								} else {
+									String[] temp2 = term2[j].split("x");
+									int c = Integer.parseInt(temp2[0]);
+									if (term2[j].contains("^")) {
+										temp2[1] = temp2[1].replace("^", "");
+										int d = Integer.parseInt(temp2[1]), e = a * c, f = d + 1;
+										allList.add(e + "x" + "^" + f);
+									} else {
+										int e = a * c;
+										allList.add(e + "x" + "^" + 2);
+									}
+
+								}
+							}
+
+							else {
+								int c = Integer.parseInt(term2[j]),e = a * c;
+								allList.add(e + "x");
+
+							}
+						}
+						
 					}
 				}
 			}
