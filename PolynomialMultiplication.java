@@ -8,15 +8,18 @@ public class PolynomialMultiplication {
 	static void process(String polynomial1, String polynamial2) {
 		String[] term1 = polynomial1.split(" ");
 		String[] term2 = polynamial2.split(" ");
+		
 		// if first term be x change it to +x:
 		if (term1[0].contains("x")) {
 			if (term1[0].charAt(0) == 'x')
 				term1[0] = String.join("", "+", term1[0]);
 		}
+		
 		if (term2[0].contains("x")) {
 			if (term2[0].charAt(0) == 'x')
 				term2[0] = String.join("", "+", term2[0]);
 		}
+		
 		// if special term be -x or +x change it to -1x and +1x for next
 		// processes:
 		for (int i = 0; i < term1.length; i++)
@@ -30,8 +33,9 @@ public class PolynomialMultiplication {
 			else if (term2[i].contains("+x"))
 				term2[i] = term2[i].replace("+", "+1");
 			
-				ArrayList<String> allList = new ArrayList<String>();
+		ArrayList<String> allList = new ArrayList<String>();
 		String[] allArr = new String[allList.size()];
+		
 		for (int i = 0; i < term1.length; i++) {
 			
 			// for doing multiplication:(for terms1)
@@ -234,10 +238,9 @@ public class PolynomialMultiplication {
 
 		ArrayList<String> allList2 = new ArrayList<String>();
 		allArr = allList.toArray(allArr);
+		
 		//ghesmate jame tavan haye barabar va x ha va adade sahih:
-		for (int i = 0; i < allArr.length; i++)
-
-		{	//jame tavanha:
+		for (int i = 0; i < allArr.length; i++){	//jame tavanha:
 			if (allArr[i].contains("x")) {
 				if (allArr[i].contains("^")) {
 					
@@ -290,11 +293,30 @@ public class PolynomialMultiplication {
 			//jame adade sahih:
 			else {
 				
+				int a = Integer.parseInt(allArr[i]);
+				int c = 0;
+				int counter = 0;
+				for (int j = allArr.length - 1; j > i; j--) {
+					if (allArr[j].contains("x"))
+						;
+					else {
+						int b = Integer.parseInt(allArr[j]);
+						c = c + (a + b);
+						counter++;
+						a = 0;
+					}
+
+				}
+				if (counter == 0)
+					allList2.add(a + "");
+				else
+					allList2.add(c + "");
+				
 			}
 		}
 		
 		
-		
+	}	
 		
 		
 		
