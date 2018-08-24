@@ -230,13 +230,65 @@ public class PolynomialMultiplication {
 					}
 				}
 			}
-		
-		
-		
-		
-		
 		}
 
+		ArrayList<String> allList2 = new ArrayList<String>();
+		allArr = allList.toArray(allArr);
+		//ghesmate jame tavan haye barabar va x ha va adade sahih:
+		for (int i = 0; i < allArr.length; i++)
+
+		{	//jame tavanha:
+			if (allArr[i].contains("x")) {
+				if (allArr[i].contains("^")) {
+					
+					String[] temp1 = allArr[i].split("x");
+					int a = Integer.parseInt(temp1[0]),c = 0,counter = 0;
+					for (int j = allArr.length - 1; j > i; j--) {
+						if (allArr[j].contains("x")) {
+							if (allArr[j].contains("^")) {
+								String[] temp2 = allArr[j].split("x");
+								int b = Integer.parseInt(temp2[0]);
+
+								if (temp1[1].equals(temp2[1])) {
+									c = c + (a + b);
+									counter++;
+									a = 0;
+								}
+							}
+						}
+					}
+					if (counter == 0)
+						allList2.add(allArr[i]);
+					else
+						allList2.add(c + "x" + temp1[1]);
+				
+				}
+				//jame x ha:
+				else {
+					
+				}
+			}
+			//jame adade sahih:
+			else {
+				
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	public static void main(String args[]) {
 
 		String polynomial1, polynomial2;
