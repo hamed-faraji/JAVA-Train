@@ -70,7 +70,8 @@ public class PolynomialMultiplication {
 						}
 					}
 					// ghesmate marboot be x ha:(baraye term1)
-				} else if (term1[i].equals("-1x")) {
+				} 
+				else if (term1[i].equals("-1x")) {
 					int a = -1;
 					for (int j = 0; j < term2.length; j++) {
 						// for seprate terms that contain "x":
@@ -107,9 +108,7 @@ public class PolynomialMultiplication {
 
 				}
 				// ghesmate marboot be x ha:(baraye term1)
-					else {
-						
-						
+				else {	
 					String[] temp1 = term1[i].split("x");
 					// a is coefficient of special term that change to
 					// integer:
@@ -155,7 +154,8 @@ public class PolynomialMultiplication {
 							}
 						}
 
-					} else {
+					} 
+					else {
 						
 						for (int j = 0; j < term2.length; j++) {
 							// for seprate terms that contain "x":
@@ -163,18 +163,21 @@ public class PolynomialMultiplication {
 								if (term2[j].equals("+1x")) {
 									int c = 1, e = a * c;
 									allList.add(e + "x" + "^" + 2);
-								} else if (term2[j].equals("-1x")) {
+								} 
+								else if (term2[j].equals("-1x")) {
 									int c = -1, e = a * c;
 									allList.add(e + "x" + "^" + 2);
 
-								} else {
+								} 
+								else {
 									String[] temp2 = term2[j].split("x");
 									int c = Integer.parseInt(temp2[0]);
 									if (term2[j].contains("^")) {
 										temp2[1] = temp2[1].replace("^", "");
 										int d = Integer.parseInt(temp2[1]), e = a * c, f = d + 1;
 										allList.add(e + "x" + "^" + f);
-									} else {
+									} 
+									else {
 										int e = a * c;
 										allList.add(e + "x" + "^" + 2);
 									}
@@ -192,8 +195,41 @@ public class PolynomialMultiplication {
 					}
 				}
 			}
-		
-		}
+			// ghesmate marboot be adade sahih:
+			else {
+				int a = Integer.parseInt(term1[i]);
+				for (int j = 0; j < term2.length; j++) {
+					// for seprate terms that contain "x":
+					if (term2[j].contains("x")) {
+						if (term2[j].equals("+1x")) {
+							int c = 1,e = a * c;
+							allList.add(e + "x");
+						} else if (term2[j].equals("-1x")) {
+							int c = -1,e = a * c;
+							allList.add(e + "x");
+						} else {
+							String[] temp2 = term2[j].split("x");
+							int c = Integer.parseInt(temp2[0]);
+							if (term2[j].contains("^")) {
+								temp2[1] = temp2[1].replace("^", "");
+								int d = Integer.parseInt(temp2[1]), e = a * c, f = d;
+								allList.add(e + "x" + "^" + f);
+
+							} else {
+								int e = a * c;
+								allList.add(e + "x");
+								}
+
+						}
+					}
+
+					else {
+						int c = Integer.parseInt(term2[j]), e = a * c;
+						allList.add(e + "");
+
+					}
+				}
+			}
 		
 		
 		
