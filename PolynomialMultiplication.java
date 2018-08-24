@@ -315,20 +315,51 @@ public class PolynomialMultiplication {
 			}
 		}
 		
-		
+		for (int i = 0; i < allList2.size(); i++){
+			
+
+			if (allList2.get(i).contains("^")) {
+				String[] temp1 = allList2.get(i).split("x");
+				for (int j = allList2.size() - 1; j > i; j--) {
+					if (allList2.get(j).contains("^")) {
+						String[] temp2 = allList2.get(j).split("x");
+						if (temp2[1].equals(temp1[1]))
+							allList2.remove(j);
+					}
+				}
+			} 
+			else {
+				if (allList2.get(i).contains("x")) {
+					for (int j = allList2.size() - 1; j > i; j--) {
+						if (allList2.get(j).contains("^"))
+							;
+						else if (allList2.get(j).contains("x"))
+							allList2.remove(j);
+					}
+
+				}
+				else {
+					for (int j = allList2.size() - 1; j > i; j--) {
+						if (allList2.get(j).contains("^"))
+							;
+						else if (allList2.get(j).contains("x"))
+							;
+						else
+							allList2.remove(j);
+
+					}
+				}
+			}
+	
+		}
+	
+	
+	
+	
 	}	
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
 		
 	public static void main(String args[]) {
 
