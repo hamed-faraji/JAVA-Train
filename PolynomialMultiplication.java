@@ -39,24 +39,30 @@ public class PolynomialMultiplication {
 			if (term1[i].contains("x")) {
 				if (term1[i].equals("+1x")) {
 					int a = 1;
-					// special ifs for exeptions:
+					// for doing polynomial:(for terms2):
+					// ghesmate marboot be amaliate tavan:(baraye term2)
+					for (int j = 0; j < term2.length; j++) {
+						if (term2[j].contains("x")) {
+							// special ifs for exeptions:
 							if (term2[j].equals("+1x")) {
 								int c = 1, e = a * c;
 								allList.add(e + "x" + "^" + 2);
-								} else if (term2[j].equals("-1x")) {
+							} else if (term2[j].equals("-1x")) {
 								int c = -1, e = a * c;
 								allList.add(e + "x" + "^" + 2);
-								} else {
+							} else {
 								String[] temp2 = term2[j].split("x");
 								int c = Integer.parseInt(temp2[0]);
 								if (term2[j].contains("^")) {
 									temp2[1] = temp2[1].replace("^", "");
 									int d = Integer.parseInt(temp2[1]), e = a * c, f = d + 1;
 									allList.add(e + "x" + "^" + f);
-									} else {//// ghesmate marboot be x ha: (baraye term2)
+								} // ghesmate marboot be x ha: (baraye term2)
+								else {//
 									int e = a * c;
 									allList.add(e + "x" + "^" + 2);
-									}
+
+								}
 							}
 						} else {
 							int c = Integer.parseInt(term2[j]), e = a * c;
@@ -64,7 +70,6 @@ public class PolynomialMultiplication {
 						}
 					}
 					// ghesmate marboot be x ha:(baraye term1)
-					
 				} else if (term1[i].equals("-1x")) {
 					int a = -1;
 					for (int j = 0; j < term2.length; j++) {
@@ -84,13 +89,22 @@ public class PolynomialMultiplication {
 									int d = Integer.parseInt(temp2[1]), e = a * c, f = d + 1;
 									allList.add(e + "x" + "^" + f);
 
-					
-						}else {
+								} else {
+									int e = a * c;
+									allList.add(e + "x" + "^" + 2);
+
+								}
+							}
+
+						}
+
+						else {
 							int c = Integer.parseInt(term2[j]), e = a * c;
 							allList.add(e + "x");
 
 						}
 					}
+
 				}
 				// ghesmate marboot be x ha:(baraye term1)
 					else {
