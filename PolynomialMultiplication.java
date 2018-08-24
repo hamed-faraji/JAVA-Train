@@ -352,7 +352,15 @@ public class PolynomialMultiplication {
 			}
 	
 		}
-	
+		
+		ArrayList<String> allList3 = new ArrayList<String>();
+		int j = 0;
+		//jodasazie adade tavan va tabdil be int baraye sort kardan:
+		for (int i = 0; i < allList2.size(); i++)
+			if (allList2.get(i).contains("^"))
+				j++;
+		int[] newArr = new int[j];
+		int f = 0;
 	
 	
 	
