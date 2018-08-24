@@ -266,6 +266,25 @@ public class PolynomialMultiplication {
 				//jame x ha:
 				else {
 					
+					int c = 0, counter = 0;
+					String g = allArr[i].replace("x", "");
+					int a = Integer.parseInt(g);
+					for (int j = allArr.length - 1; j > i; j--) {
+						if (allArr[j].contains("^"))
+							;
+						else if (allArr[j].contains("x")) {
+							String h = allArr[j].replace("x", "");
+							int b = Integer.parseInt(h);
+							c = c + (a + b);
+							counter++;
+							a = 0;
+						}
+					}
+					if (counter == 0)
+						allList2.add(allArr[i]);
+					else
+						allList2.add(c + "x");
+					
 				}
 			}
 			//jame adade sahih:
