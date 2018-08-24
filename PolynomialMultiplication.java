@@ -108,7 +108,56 @@ public class PolynomialMultiplication {
 				}
 				// ghesmate marboot be x ha:(baraye term1)
 					else {
-				
+						
+						
+					String[] temp1 = term1[i].split("x");
+					// a is coefficient of special term that change to
+					// integer:
+					int a = Integer.parseInt(temp1[0]);
+					// for seprate terms that contain "^":
+					if (term1[i].contains("^")) {
+						temp1[1] = temp1[1].replace("^", "");
+						// b is exponentiation of special term that change to
+						// integer:
+						int b = Integer.parseInt(temp1[1]);
+						for (int j = 0; j < term2.length; j++) {
+							// for seprate terms that contain "x":
+							if (term2[j].contains("x")) {
+								if (term2[j].equals("+1x")) {
+									int c = 1, e = a * c, f = b + 1;
+									allList.add(e + "x" + "^" + f);
+								} else if (term2[j].equals("-1x")) {
+									int c = -1, e = a * c, f = b + 1;
+									allList.add(e + "x" + "^" + f);
+								}
+
+								else {
+									String[] temp2 = term2[j].split("x");
+									int c = Integer.parseInt(temp2[0]);
+									if (term2[j].contains("^")) {
+										temp2[1] = temp2[1].replace("^", "");
+										int d = Integer.parseInt(temp2[1]), e = a * c, f = b + d;
+										allList.add(e + "x" + "^" + f);
+
+									} else {
+										int e = a * c, f = b + 1;
+										allList.add(e + "x" + "^" + f);
+
+									}
+
+								}
+							}
+
+							else {
+								int c = Integer.parseInt(term2[j]), e = a * c;
+								allList.add(e + "x" + "^" + b);
+
+							}
+						}
+
+					} else {
+						
+					}
 				}
 			}
 		
