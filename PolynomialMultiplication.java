@@ -440,7 +440,17 @@ public class PolynomialMultiplication {
 						System.out.print(exept[0] + " ");
 				} else
 					System.out.print(allList3.get(i) + " ");
-			} 
+			}  else if (allList3.get(i).contains("^1")) {
+				String[] exept = allList3.get(i).split("x");
+				System.out.print(exept[0] + "x" + " ");
+			} else if (allList3.get(i).contains("^0")) {
+				String[] exept = allList3.get(i).split("x");
+				System.out.print(exept[0] + " ");
+			} else if (allList3.get(i).contains("-"))
+				System.out.print(allList3.get(i) + " ");
+
+			else
+				System.out.print("+" + allList3.get(i) + " ");
 	
 	}	
 		
