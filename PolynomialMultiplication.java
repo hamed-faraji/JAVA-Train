@@ -413,6 +413,14 @@ public class PolynomialMultiplication {
 				}
 			}
 		}
+		for (int i = 0; i < allList2.size(); i++) {
+			if (allList2.get(i).contains("x"))
+				;
+			else {
+				allList3.add(allList2.get(i));
+			}
+		}
+		
 	
 	}	
 		
