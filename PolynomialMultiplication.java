@@ -382,7 +382,20 @@ public class PolynomialMultiplication {
 					newArr[k] = index;
 				}
 		}
-	
+		//rikhtane jomalat dar yek list jadid bar asase tavanhaye sort shode:
+		for (; j > 0; j--)
+			for (int i = 0; i < allList2.size(); i++)
+				if (allList2.get(i).contains("^" + newArr[j - 1])) {
+					String[] temp = allList2.get(i).split("x");
+					if (temp[0].equals("-1"))
+						allList3.add("-x" + temp[1]);
+					else if (temp[0].equals("1"))
+						allList3.add("x" + temp[1]);
+					else if (temp[0].equals("0"))
+						;
+					else
+						allList3.add(allList2.get(i));
+				}
 	
 	
 	}	
