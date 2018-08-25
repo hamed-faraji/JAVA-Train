@@ -361,6 +361,17 @@ public class PolynomialMultiplication {
 				j++;
 		int[] newArr = new int[j];
 		int f = 0;
+		
+		for (int i = 0; i < allList2.size(); i++)
+			if (allList2.get(i).contains("^")) {
+				String[] temp3 = allList2.get(i).split("x");
+				temp3[1] = temp3[1].replace("^", "");
+				int a = Integer.parseInt(temp3[1]);
+				newArr[f] = a;
+				f++;
+			}
+
+		int p;
 	
 	
 	
