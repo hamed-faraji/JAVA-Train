@@ -396,7 +396,23 @@ public class PolynomialMultiplication {
 					else
 						allList3.add(allList2.get(i));
 				}
-	
+		for (int i = 0; i < allList2.size(); i++) {
+			if (allList2.get(i).contains("^"))
+				;
+			else if (allList2.get(i).contains("x")) {
+				String[] temp = allList2.get(i).split("x");
+				if (temp[0].equals("0"))
+					;
+
+				else if (temp[0].equals("1")) {
+					allList3.add("x");
+				} else if (temp[0].equals("-1")) {
+					allList3.add("-x");
+				} else {
+					allList3.add(allList2.get(i));
+				}
+			}
+		}
 	
 	}	
 		
