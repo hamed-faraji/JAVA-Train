@@ -420,7 +420,27 @@ public class PolynomialMultiplication {
 				allList3.add(allList2.get(i));
 			}
 		}
-		
+		//amaliate marboot be khoroji va exeptionhaye ehtemali k momken ast pish biyayad:
+		if (allList3.isEmpty()) {
+			System.out.println("0");
+		}
+		for (int i = 0; i < allList3.size(); i++)
+
+			if (i == 0) {
+				if (allList3.get(i).contains("^1")) {
+					String[] exept = allList3.get(i).split("x");
+					System.out.print(exept[0] + "x" + " ");
+				} else if (allList3.get(i).contains("^0")) {
+					String[] exept = allList3.get(i).split("x");
+					if (allList3.get(i).equals("x^0"))
+						System.out.print("1 ");
+					else if (allList3.get(i).equals("-x^0"))
+						System.out.print("-1 ");
+					else
+						System.out.print(exept[0] + " ");
+				} else
+					System.out.print(allList3.get(i) + " ");
+			} 
 	
 	}	
 		
