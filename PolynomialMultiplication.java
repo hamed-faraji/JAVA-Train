@@ -370,8 +370,18 @@ public class PolynomialMultiplication {
 				newArr[f] = a;
 				f++;
 			}
-
 		int p;
+		//sorte tavanha:
+		for (p = newArr.length - 1; p >= 0; p--) {
+			int max = newArr[p];
+			for (int k = 0; k <= p; k++)
+				if (max < newArr[k]) {
+					max = newArr[k];
+					int index = newArr[p];
+					newArr[p] = newArr[k];
+					newArr[k] = index;
+				}
+		}
 	
 	
 	
